@@ -23,8 +23,8 @@
   <div id="search-widget">
     <button type="button" aria-expanded="false" aria-controls="search-popup"><img src="/images/icon-search-white.svg" width="36" height="36" alt="Search Form"></button>
     <div id="search-popup" aria-hidden="true">
-      <form method="post" role="search">
-        <input type="search" aria-label="Enter product name" placeholder="Search&hellip;" tabindex="-1" required>
+      <form th:method="post" th:action="@{/search}" role="search">
+        <input th:name="searchString" type="search" aria-label="Enter product name" placeholder="Search&hellip;" tabindex="-1" required>
         <button type="submit" tabindex="-1">Search</button>
       </form>
       <button type="button" tabindex="-1"><img src="/images/icon-xmark.svg" width="26" height="26" alt="Close"></button>
