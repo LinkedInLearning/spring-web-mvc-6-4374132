@@ -441,29 +441,29 @@ form [type="radio"]:not(:checked) + label:hover::before {
 	border-color: var(--color-gray);
 	}
 
-form [type="checkbox"] + label > svg {
+form [type="checkbox"] ~ label > svg {
 	position: relative;
 	top: 0.2rem;
 	flex-shrink: 0;
 	border-radius: 3.5px;
 	}
 
-form [type="checkbox"] + label > svg > rect {
+form [type="checkbox"] ~ label > svg > rect {
 	stroke: var(--color-border);
 	fill: transparent;
 	transition-property: stroke, fill;
 	}
 
-form [type="checkbox"]:checked + label > svg > rect {
+form [type="checkbox"]:checked ~ label > svg > rect {
 	stroke: var(--color-purpleviolet);
 	fill: var(--color-purpleviolet);
 	}
 
-form [type="checkbox"]:not(:checked) + label:hover > svg > rect {
+form [type="checkbox"]:not(:checked) ~ label:hover > svg > rect {
 	stroke: var(--color-gray);
 	}
 
-form [type="checkbox"] + label > svg > path {
+form [type="checkbox"] ~ label > svg > path {
 	stroke-width: 0;
 	fill: #fff;
 	}
