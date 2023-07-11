@@ -1,6 +1,8 @@
 package com.linkedin.collectibles.beans;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -11,27 +13,28 @@ import java.util.Date;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-   /* @NotEmpty(message = "Email cannot be empty")
-    @Email(message = "Should be a well-formed email address")*/
+    @NotEmpty(message = "Email cannot be empty")
+    @Email(message = "Should be a well-formed email address")
     private String email;
 
-    /*@NotEmpty(message = "Name cannot be empty")
-    @Size(min = 1, max = 20, message = "Size must be between 1 and 20")*/
+    @NotEmpty(message = "Name cannot be empty")
+    @Size(min = 1, max = 20, message = "Size must be between 1 and 20")
     private String name;
 
-    //@NotEmpty(message = "Gender cannot be empty")
+    @NotEmpty(message = "Gender cannot be empty")
     private String gender;
     private String message;
     private boolean newsLetter;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    /*@NotNull(message = "Date of birth cannot be empty")
-    @Past(message = "Date of birth cannot be a future date")*/
+    @NotNull(message = "Date of birth cannot be empty")
+    @Past(message = "Date of birth cannot be a future date")
     private Date dateOfBirth;
 
-    //@NotEmpty(message = "Select atleast one favorite character")
+    @NotEmpty(message = "Select atleast one favorite character")
     private String favoriteCollection;
 
     public Long getId() {
