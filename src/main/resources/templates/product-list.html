@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<title>“blade” Search Results | Big Star Collectibles</title>
+
+	<!-- favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="images/favicons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="images/favicons/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="images/favicons/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- stylesheets -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&family=Roboto:wght@700&display=swap">
+	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/common.css?ver=2209301853">
+</head>
+<body>
+
+	<div id="skip">
+		<a href="#main">Skip to main content</a>
+	</div>
+
+	<div th:replace="~{fragments.html :: header}"/>
+
+	<main id="main">
+
+		<section id="products">
+			<header>
+				<h1>Products</h1>
+
+				<p th:text="${products.size()}+' Products'"></p>
+				<div id="wrapper-in-prod-header">
+					<button type="button"><img src="images/icon-xmark.svg" width="26" height="26" alt="Close"></button>
+					<p th:text="${products.size()}+' Products'"></p>
+					<section>
+						<header>
+							<h2 id="label-filter-by">Filter by:</h2>
+							<a role="button" tabindex="0">Clear filters</a>
+						</header>
+						<details>
+							<summary>Product type</summary>
+							<ul>
+								<li>
+									<input  id="filter-type-all" type="checkbox">
+									<label for="filter-type-all">All <span class="visually-hidden">product types</span></label>
+								</li>
+								<li>
+									<input  id="filter-type-aprons" type="checkbox">
+									<label for="filter-type-aprons">Aprons</label>
+								</li>
+								<li>
+									<input  id="filter-type-art" type="checkbox">
+									<label for="filter-type-art">Framed Art</label>
+								</li>
+								<li>
+									<input  id="filter-type-hats" type="checkbox">
+									<label for="filter-type-hats">Hats</label>
+								</li>
+								<li>
+									<input  id="filter-type-magnets" type="checkbox">
+									<label for="filter-type-magnets">Magnets</label>
+								</li>
+								<li>
+									<input  id="filter-type-mugs" type="checkbox">
+									<label for="filter-type-mugs">Mugs</label>
+								</li>
+								<li>
+									<input  id="filter-type-notebooks" type="checkbox">
+									<label for="filter-type-notebooks">Notebooks</label>
+								</li>
+								<li>
+									<input  id="filter-type-posters" type="checkbox">
+									<label for="filter-type-posters">Posters</label>
+								</li>
+								<li>
+									<input  id="filter-type-pillows" type="checkbox">
+									<label for="filter-type-pillows">Pillows</label>
+								</li>
+								<li>
+									<input  id="filter-type-tote" type="checkbox">
+									<label for="filter-type-tote">Tote Bags</label>
+								</li>
+								<li>
+									<input  id="filter-type-cards" type="checkbox">
+									<label for="filter-type-cards">Trading Cards</label>
+								</li>
+								<li>
+									<input  id="filter-type-tshirts" type="checkbox">
+									<label for="filter-type-tshirts">T-shirts</label>
+								</li>
+							</ul>
+						</details>
+						<details>
+							<summary>Price</summary>
+							<ul>
+								<li>
+									<input  id="filter-price-all" type="checkbox">
+									<label for="filter-price-all">All <span class="visually-hidden">prices</span></label>
+								</li>
+								<li>
+									<input  id="filter-price-under-20" type="checkbox">
+									<label for="filter-price-under-20">Under $20</label>
+								</li>
+								<li>
+									<input  id="filter-price-20-30" type="checkbox">
+									<label for="filter-price-20-30">$20 – $30</label>
+								</li>
+								<li>
+									<input  id="filter-price-30-40" type="checkbox">
+									<label for="filter-price-30-40">$30 – $40</label>
+								</li>
+								<li>
+									<input  id="filter-price-40-50" type="checkbox">
+									<label for="filter-price-40-50">$40 – $50</label>
+								</li>
+								<li>
+									<input  id="filter-price-over-50" type="checkbox">
+									<label for="filter-price-over-50">Over $50</label>
+								</li>
+							</ul>
+						</details>
+						
+					</section>
+				</div><!-- / #wrapper-in-prod-header -->
+				
+			</header>
+			<dl class="prod-list">
+				<div th:each="product : ${products}">
+					<dt th:text="${product.name}"><a href="#"></a></dt>
+					<dd><a href="Product-Detail.html" role="presentation" tabindex="-1"><img th:attr="src=${product.imagePath}"   style="padding: 0 7.143%;"></a></dd>
+					<dd th:text="${#numbers.formatCurrency(product.price)}" class="offer"></dd>
+					<dd class="rating">
+						<img th:each="i : ${#numbers.sequence(0, product.rating - 1, 1)}" src="images/icon-rating-star-purpleviolet.svg" width="16" height="16" alt="">
+						<img th:each="i : ${#numbers.sequence(0, 5 - product.rating - 1, 1)}" src="images/icon-rating-star-purpleviolet.svg" width="16" height="16" alt="" class="nonscoring">
+
+						(<span th:text="${product.noOfReviews}"></span>)
+					</dd>
+					<dd th:text="${product.description}" class="desc"></dd>
+				</div>
+
+			</dl>
+		
+		</section><!-- / #products -->
+
+	</main>
+
+	<div th:replace="~{fragments.html :: footer}"/>
+
+
+	<script src="js/plugins.js?ver=2209212222"></script>
+	<script src="js/main.js?ver=2209301853"></script>
+
+</body>
+</html>
