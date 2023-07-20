@@ -16,4 +16,7 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 
     @Override
     Iterable<Product> findAll();
+
+    @Query("select p from Product p where p.id = :id")
+    public Product searchById(@Param("id") String keyword);
 }
