@@ -59,12 +59,12 @@
 				<p>Product ID: <span th:text="${product.id}" itemprop="productID"></span></p>
 			</header>
 			<p th:text="${product.description}" itemprop="description"></p>
-      <form method="post">
+      <form th:method="post" th:action="@{/addToCart}">
         <fieldset>
           <legend>Colors:</legend>
           <div>
             <label>
-              <img th:text="${product.imagePath}" width="80" height="80" alt="" itemprop="image" style="padding: 0 13.925%;">
+              <img th:src="${product.imagePath}" width="80" height="80" alt="" itemprop="image" style="padding: 0 13.925%;">
               <span th:text="${product.color}"/>
             </label>
           </div>

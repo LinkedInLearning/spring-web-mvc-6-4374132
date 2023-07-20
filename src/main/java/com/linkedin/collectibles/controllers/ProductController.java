@@ -9,9 +9,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.context.request.async.DeferredResult;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executor;
 
 @Controller
@@ -64,6 +66,18 @@ public class ProductController {
     public String getProductDetails(Model model, @RequestParam("id") String productId){
         model.addAttribute("product", productRepository.searchById(productId));
         return "product-details";
+    }
 
+    @PostMapping("/addToCart")
+    public String addToCart(Model model, @SessionAttribute("cart")Map<String, Integer> cart,
+                            @RequestParam("productId") String productId, @RequestParam("quantity") Integer quantity){
+        logger.info("Cart {}", cart);
+
+        if(!cart.containsKey(productId)){
+            cart.put(productId, 0);
+        }
+        cart.put(productId, cart.get(productId)+quantity);
+        logger.info("After adding to cart {}", cart);
+        return "redirect:/getProductDetails?id="+productId;
     }
 }
