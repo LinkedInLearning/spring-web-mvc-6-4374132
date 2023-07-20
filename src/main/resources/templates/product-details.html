@@ -64,8 +64,8 @@
           <legend>Colors:</legend>
           <div>
             <label>
-              <img src="images/products/binaryville-mug-dolores-white.svg" width="80" height="80" alt="" itemprop="image" style="padding: 0 13.925%;">
-              White
+              <img th:text="${product.imagePath}" width="80" height="80" alt="" itemprop="image" style="padding: 0 13.925%;">
+              <span th:text="${product.color}"/>
             </label>
           </div>
 
@@ -74,8 +74,8 @@
 
 					<label for="product-qty">Quantity:</label>
 					<div class="qty-widget">
-
-						<input id="product-qty" type="number" min="1" value="1" required>
+						<input type="hidden" th:name="productId" th:value="${product.id}"/>
+						<input th:name="quantity" id="product-qty" type="number" min="1" value="1" required>
 
 					</div>
 				</div>

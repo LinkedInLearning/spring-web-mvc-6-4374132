@@ -7,12 +7,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
+
 public class ApplicationInterceptor implements HandlerInterceptor {
 
     Logger LOG = LoggerFactory.getLogger(ApplicationInterceptor.class);
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        if(request.getSession().getAttribute("cart") == null){
+            request.getSession().setAttribute("cart", new HashMap<String, Integer>());
+        }
         LOG.info("in pre-handle on interceptor");
         return true;
     }
