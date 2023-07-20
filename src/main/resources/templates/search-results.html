@@ -144,8 +144,8 @@
 			</header>
 			<dl class="prod-list">
 				<div th:each="product : ${products}">
-					<dt th:text="${product.name}"><a href="#"></a></dt>
-					<dd><a href="Product-Detail.html" role="presentation" tabindex="-1"><img th:attr="src=${product.imagePath}"   style="padding: 0 7.143%;"></a></dd>
+					<dt th:text="${product.name}"><a th:href="@{/getProductDetails(id=${product.id})}"></a></dt>
+					<dd><a th:href="@{/getProductDetails(id=${product.id})}" role="presentation" tabindex="-1"><img th:attr="src=${product.imagePath}"   style="padding: 0 7.143%;"></a></dd>
 					<dd th:text="${#numbers.formatCurrency(product.price)}" class="offer"></dd>
 					<dd class="rating">
 						<img th:each="i : ${#numbers.sequence(0, product.rating - 1, 1)}" src="images/icon-rating-star-purpleviolet.svg" width="16" height="16" alt="">
