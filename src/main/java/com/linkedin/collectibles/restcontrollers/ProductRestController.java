@@ -27,6 +27,6 @@ public class ProductRestController {
 
     @GetMapping("/bigstar/api/products/{id}")
     public Product getProductById(@PathVariable("id") String id){
-        return productRepository.findById(Integer.valueOf(id)).get();
+        return productRepository.findById(Integer.valueOf(id)).orElseThrow(()-> new ProductNotFoundException(id));
     }
 }
