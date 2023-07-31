@@ -2,6 +2,9 @@ package com.linkedin.collectibles.restcontrollers;
 
 import com.linkedin.collectibles.beans.Product;
 import com.linkedin.collectibles.dao.ProductRepository;
+import org.springframework.data.util.Streamable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -16,11 +19,15 @@ public class ProductRestController {
         this.productRepository = productRepository;
     }
 
-    @GetMapping("/bigstar/api/products")
+    /*@GetMapping("/bigstar/api/products")
     public List<Product> allProducts(){
         List<Product> products = new ArrayList<>();
         return (List<Product>) productRepository.findAll();
+    }*/
 
+    @GetMapping("/bigstar/api/products")
+    public ResponseEntity<List<Product>> getAllProducts(){
+        return new ResponseEntity(Streamable.of(productRepository.findAll()).stream().toList(), HttpStatus.OK);
     }
 
     @GetMapping("/bigstar/api/products/{id}")

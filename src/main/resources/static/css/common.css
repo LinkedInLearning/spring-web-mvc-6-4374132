@@ -1541,7 +1541,7 @@ body {
 	}
 }
 
-#wrapper-in-prod-header details :is(:focus, :checked) + label {
+#wrapper-in-prod-header details :is(:focus, :checked) ~ label {
 	color: var(--color-purpleviolet);
 	border-color: inherit;
 	}
