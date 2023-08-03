@@ -54,20 +54,18 @@
 						<header>
 							<h2 id="label-filter-by">Filter by:</h2>
 						</header>
+						<form th:method="post" th:action="@{/filterProducts}" th:object="${filter}">
 						<details>
 							<summary>Product type</summary>
 							<ul>
-								<li>
-									<input  id="filter-type-all" type="checkbox">
-									<label for="filter-type-all">All <span class="visually-hidden">product types</span></label>
+								<li th:each="type : ${filter.productType}">
+									<input  th:id="${type}" type="checkbox" th:value="${type}" th:field="*{selectedType}" th:onchange="this.form.submit()">
+									<label th:for="${type}" th:text="${type}"> <span class="visually-hidden"></span></label>
 								</li>
-								<li>
-									<input  id="filter-type-aprons" type="checkbox">
-									<label for="filter-type-aprons">Aprons</label>
-								</li>
+
 							</ul>
 						</details>
-
+						</form>
 					</section>
 				</div><!-- / #wrapper-in-prod-header -->
 				

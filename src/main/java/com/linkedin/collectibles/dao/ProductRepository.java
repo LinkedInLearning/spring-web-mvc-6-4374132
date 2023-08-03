@@ -19,4 +19,7 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 
     @Query("select p from Product p where p.id = :id")
     public Product searchById(@Param("id") String keyword);
+
+    @Query("select p from Product p where p.categoryId = :id")
+    public List<Product> searchByCategoryId(@Param("id") Integer keyword);
 }
