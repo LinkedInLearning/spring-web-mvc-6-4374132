@@ -30,7 +30,7 @@ public class ProductRestController {
 
     @PostMapping("/bigstar/api/products")
     public Product saveProduct(@RequestBody Product newProduct){
-        return  productRepository.findById(newProduct.getId()).map(product -> {
+        return productRepository.findById(newProduct.getId()).map(product -> {
             product.setName(newProduct.getName());
             product.setDescription(newProduct.getDescription());
             product.setColor(newProduct.getColor());
@@ -41,8 +41,6 @@ public class ProductRestController {
             product.setNoOfReviews(newProduct.getNoOfReviews());
             product.setPrice(newProduct.getPrice());
             return productRepository.save(product);
-        }).orElseGet(()->{
-            return productRepository.save(newProduct);
-        });
+        }).orElseGet(()-> productRepository.save(newProduct));
     }
 }
