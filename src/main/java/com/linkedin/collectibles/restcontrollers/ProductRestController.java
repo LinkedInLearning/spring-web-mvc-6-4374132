@@ -41,8 +41,6 @@ public class ProductRestController {
             product.setNoOfReviews(newProduct.getNoOfReviews());
             product.setPrice(newProduct.getPrice());
             return productRepository.save(product);
-        }).orElseGet(()->{
-            return productRepository.save(newProduct);
-        });
+        }).orElseGet(()-> productRepository.save(newProduct));
     }
 }
