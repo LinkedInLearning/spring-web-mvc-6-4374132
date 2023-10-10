@@ -1,7 +1,10 @@
 # Spring Web MVC 6
-This is the repository for the LinkedIn Learning course `Spring Web MVC 6`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course Spring Web MVC 6. The full course is available from [LinkedIn Learning][lil-course-url].
 
-_See the readme file in the main branch for updated instructions and information._
+![Spring Web MVC 6][lil-thumbnail-url] 
+
+Spring is one of the most popular frameworks to build applications, catering to a varied number of requirements such as web services, web applications, microservices, and more.Spring MVC helps developers build modular web applications in Java or Kotlin with a clean separation of business and presentation logic and works with a variety of UI technologies, making it easy to plug in any UI framework. In this course, instructor Ketkee Aryamane guides you through the fundamental aspects of Spring MVC, taking a deep dive into the framework that helps build robust web applications and integrates well with a variety of UI frameworks such as React and Angular. It provides foundational modular components that allows developers to focus on the business logic rather than the administrative tasks in application development.
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -20,15 +23,16 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
 
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+### Instructor
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+Ketkee Aryamane 
+                            
+Java/JEE Developer/Trainer
 
+                            
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/ketkee-aryamane).
+
+[lil-course-url]: https://www.linkedin.com/learning/spring-web-mvc-6?dApp=59033956&leis=LAA
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/D560DAQHdZhXlM6WZcg/learning-public-crop_288_512/0/1696543566891?e=2147483647&v=beta&t=cTz6-Z0iUW3hyJmqTvE30fkO_Ln2xBhzF0KdSTTWea4
